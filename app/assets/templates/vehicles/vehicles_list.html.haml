@@ -1,0 +1,23 @@
+%div
+  %table.table.table-hover
+    %thead
+      %tr
+        %td #
+        %td Наименование
+        %td Гос. номер
+        %td ПТС
+        %td Дата ПТС
+        %td Фото
+        %td
+          %a.btn.btn-success{ href: '#' } Новый
+    %tbody
+      %tr{ ng: { repeat: '(id, vehicle) in vehicles' } }
+        %td {{id + 1}}
+        %td {{vehicle.name}}
+        %td {{vehicle.state_number}}
+        %td {{vehicle.state_number}}
+        %td {{vehicle.state_number}}
+        %td {{vehicle.state_number}}
+        %td
+          %a.btn.btn-default.btn-xs{ href: '#' } Edit
+          %a.btn.btn-danger.btn-xs{ href: '#' } Delete
