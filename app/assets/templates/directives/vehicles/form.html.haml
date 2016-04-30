@@ -1,0 +1,28 @@
+%form.form-horizontal
+  .row
+    .col-md-6
+      .form-group
+        %label.col-sm-4.control-label Наименование
+        .col-sm-8
+          %input.form-control{ type: 'text', ng: { model: 'vehicle.name' } }
+      .form-group
+        %label.col-sm-4.control-label Гос. номер
+        .col-sm-8
+          %input.form-control{ type: 'text', ng: { model: 'vehicle.name' } }
+    .col-md-6
+      .form-group
+        %label.col-sm-4.control-label Номер ПТС
+        .col-sm-8
+          %input.form-control{ type: 'text', ng: { model: 'vehicle.name' } }
+      .form-group
+        %label.col-sm-4.control-label Дата ПТС
+        .col-sm-8
+          %input.form-control{ type: 'text', ng: { model: 'vehicle.name' } }
+  .row
+    .alert.alert-success
+      %p.text-center Images
+  .row
+    .col-md-6.col-md-offset-6
+      .col-sm-offset-4.col-sm-8
+        %input.btn.btn-primary{ type: 'submit', value: 'Сохранить' }
+        %input.btn.btn-default{ type: 'button', value: 'Назад' }

@@ -1,4 +1,4 @@
-@app.controller 'PagesIndexCtrl', [
+@app.controller 'VehiclesIndexCtrl', [
   '$scope'
   ($scope) ->
     $scope.header = 'Page Header'

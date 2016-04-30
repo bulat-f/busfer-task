@@ -4,7 +4,7 @@
   replace: true
   scope:
     vehicles: '='
-  templateUrl: @template 'vehicles/vehicles_list'
+  templateUrl: @template 'directives/vehicles/vehicles_list'
   controller: [
     '$scope'
     ($scope) ->

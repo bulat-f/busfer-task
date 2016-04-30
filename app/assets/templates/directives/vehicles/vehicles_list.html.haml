@@ -9,7 +9,7 @@
         %td Дата ПТС
         %td Фото
         %td
-          %a.btn.btn-success{ href: '#' } Новый
+          %a.btn.btn-success{ ui: { sref: 'vehicles.new' } } Новый
     %tbody
       %tr{ ng: { repeat: '(id, vehicle) in vehicles' } }
         %td {{id + 1}}
@@ -19,5 +19,5 @@
         %td {{vehicle.state_number}}
         %td {{vehicle.state_number}}
         %td
-          %a.btn.btn-default.btn-xs{ href: '#' } Edit
+          %a.btn.btn-default.btn-xs{ ui: { sref: 'vehicles.edit({id: id})' } } Edit
           %a.btn.btn-danger.btn-xs{ href: '#' } Delete
