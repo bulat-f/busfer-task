@@ -1,9 +1,11 @@
 @app.controller 'VehiclesIndexCtrl', [
-  '$scope'
-  ($scope) ->
-    $scope.header = 'Page Header'
-    $scope.vehicles = [
-      { name: 'Logan' }
-      { name: 'Jetta' }
-    ]
+  '$scope', 'VehiclesApiFactory'
+  ($scope, VehiclesApiFactory) ->
+    console.log 'index'
+    VehiclesApiFactory.index().$promise.then(
+      (vehicles) ->
+        $scope.vehicles = vehicles
+      (response) ->
+        console.log response
+    )
 ]

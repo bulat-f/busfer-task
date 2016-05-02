@@ -5,4 +5,5 @@
 
 @app = angular.module 'BusferTaskApp', [
   'ui.router'
+  'ngResource'
 ]

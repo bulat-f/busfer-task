@@ -1,1 +1,23 @@
-%vehicles-list{ vehicles: 'vehicles' }
+%div
+  %table.table.table-hover
+    %thead
+      %tr
+        %td #
+        %td Наименование
+        %td Гос. номер
+        %td ПТС
+        %td Дата ПТС
+        %td Фото
+        %td
+          %a.btn.btn-success{ ui: { sref: 'vehicles.new' } } Новый
+    %tbody
+      %tr{ ng: { repeat: 'vehicle in vehicles' } }
+        %td {{vehicle.id}}
+        %td {{vehicle.name}}
+        %td {{vehicle.state_number.number + vehicle.state_number.region_code}}
+        %td {{vehicle.certificate_of_title.number}}
+        %td {{vehicle.certificate_of_title.issue_date}}
+        %td {{vehicle.photos}}
+        %td
+          %a.btn.btn-default.btn-xs{ ui: { sref: 'vehicles.edit({id: vehicle.id})' } } Edit
+          %a.btn.btn-danger.btn-xs{ href: '#' } Delete
