@@ -1,0 +1,1 @@
+json.(@vehicle, :id, :name, :state_number, :certificate_of_title)

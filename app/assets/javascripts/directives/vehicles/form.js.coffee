@@ -4,14 +4,21 @@
   replace: true
   scope:
     vehicle: '='
-    action: '='
+    submit: '&'
   templateUrl: @template 'directives/vehicles/form'
   controller: [
-    '$scope', 'VehiclesApiFactory', 'VehiclesFactory'
-    ($scope, VehiclesApiFactory, VehiclesFactory) ->
+    '$scope', '$state'
+    ($scope, $state) ->
       $scope.vehicle ||= {}
-      $scope.vehicle.certificate_of_title_attributes ||= {}
-      $scope.submit = ->
-        console.log 'submit'
-        VehiclesApiFactory.create { vehicle: VehiclesFactory.toBackend($scope.vehicle) }
+      $scope.vehicle.certificate_of_title ||= {}
+      $scope.submitHandler = ->
+        $scope.status = 'disabled'
+        $scope.submit({ vehicle: $scope.vehicle }).$promise.then(
+          (response) ->
+            $state.go '^.index'
+            $scope.status = ''
+          (response) ->
+            console.log response
+            $scope.status = ''
+          )
   ]

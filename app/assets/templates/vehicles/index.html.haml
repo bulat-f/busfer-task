@@ -20,4 +20,4 @@
         %td {{vehicle.photos}}
         %td
           %a.btn.btn-default.btn-xs{ ui: { sref: 'vehicles.edit({id: vehicle.id})' } } Edit
-          %a.btn.btn-danger.btn-xs{ href: '#' } Delete
+          %a.btn.btn-danger.btn-xs{ ng: { click: 'destroy(vehicle.id)' } } Delete

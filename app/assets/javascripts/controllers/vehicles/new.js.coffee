@@ -1,5 +1,6 @@
 @app.controller 'VehiclesNewCtrl', [
-  '$scope'
-  ($scope) ->
-    null
+  '$scope', 'VehiclesApiFactory', 'VehiclesFactory'
+  ($scope, VehiclesApiFactory, VehiclesFactory) ->
+    $scope.submit = (vehicle) ->
+      VehiclesApiFactory.create { vehicle: VehiclesFactory.toBackend($scope.vehicle) }
 ]
